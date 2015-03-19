@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ask App</title><!--Ask App title-->
+	<link href="css/styles.css" rel="stylesheet" type="text/css"><!--One stylesheet needed-->
+</head>
+
+<body>
+<!--
+Main page template
+login and create account
+This was commented out as the functionality was not completed
+//-->
+<!--<script type="text/x-handlebars" data-template-name="login">-->
+<!--<div id = "wrapper">-->
+    <!--<section id = "askapp"><!--Ask App Container-->
+		<!--Navigational Buttons-->
+		<!--<button class = "back" onClick="history.back()"><img src="images/back.png" width="20" height="20" alt="back"></button>-->
+    	<!--<button class = "forward" onClick="history.forward()"><img src="images/forward.png" width="20" height="20" alt="forward"></button>-->
+    	<!--<header id = "header">Header-->
+        	<!--<h1>Ask App</h1>Title-->
+      	<!--</header>Close Header-->
+
+      	<!--<section id = "main">Main Content-->
+ 			<!--<form class = "form-horizontal" {{action "login" on = "submit"}}>Login form-->
+				<!--<p>Login</p>Login title-->
+      			<!--{{input value = email type = "text" placeholder = "email"}}Input area for email-->
+      			<!--{{input value = password type = "password" placeholder = "password"}}Input area for password-->
+  				<!--{{#link-to 'lectures'}}<button type = "submit" class = "login">Login</button>{{/link-to}}Submit button to login-->
+			<!--</form>Close Login form-->
+			<!--{{#if loginFailed}}If Failed login-->
+  				<!--<div class = "alert">Invalid username or password.</div>lert shown under login area-->
+			<!--{{/if}}-->
+			<!--<hr />-->
+  			<!--<p>Create Account</p>Create Account title-->
+			<!--<form {{action "submit" on="submit"}}>Login form-->
+     			<!--<p>{{input value = newEmail type = "text" placeholder = "email"}}</p>Input area for email-->
+				<!--<p>{{input value = newPassword type = "password" placeholder = "password"}}</p>Input area for password-->
+                <!--<input type="radio" name="sex" value="male">Lecture<br>Selects if Lecturer-->
+				<!--<input type="radio" name="sex" value="female">Student<br>Selects if Student-->
+     			<!--{{#link-to 'lectures'}}<button type = "submit" class = "login">Create</button>{{/link-to}}Submit button to create account-->
+   			<!--</form>Close Create Account form-->
+      	<!--</section>Close Main Content-->
+    <!--</section>Close Ask App Container-->
+<!--</div>-->
+<!--</script>-->
+<!--
+Lectures page template
+Lectures link to group of questions
+//-->
+<script type="text/x-handlebars" data-template-name="lectures">
+<div id = "wrapper">
+    <section id = "askapp"><!--Ask App Container-->      
+	<!-- Navigational Buttons -->
+	<button class = "back" onClick="history.back()"><img src="images/back.png" width="20" height="20" alt="back"></button>
+    <button class = "forward" onClick="history.forward()"><img src="images/forward.png" width="20" height="20" alt="forward"></button> 
+    	<header id = "header"><!--Header-->
+        	<h1>Ask App</h1><!--Title-->
+			{{input type = "text" id = "new-lecture" placeholder = "Add lecture name" value = newTitle action = "createLecture"}}
+      	</header><!--Close Header-->
+
+      	<section id = "main"><!--Main Content-->
+        	<ul id = "lecture-list"><strong>Lectures</strong><!--Lecture title - declared list-->
+				{{#each}}<li class = "lecture"><!--Loops through lecture titles to display them all-->
+            		<p>{{#link-to 'questions'}}{{title}}{{/link-to}}</p><!--Title with link to questions page-->
+          		</li><hr />{{/each}}<!--End looped content-->
+        	</ul>
+      	</section><!--Close Main Content-->
+    </section><!--Close Ask App Container-->
+</div>
+</script>
+<!--
+Questions page template
+//-->
+<script type="text/x-handlebars" data-template-name="questions">
+<div id = "wrapper">
+    <section id = "askapp"><!--Ask App Container-->       
+	<!-- Navigational Buttons -->
+	<button class = "back" onClick="history.back()"><img src="images/back.png" width="20" height="20" alt="back"></button>
+    <button class = "forward" onClick="history.forward()"><img src="images/forward.png" width="20" height="20" alt="forward"></button>
+    	<header id = "header"><!--Header-->
+        	<h1>Ask App</h1><!--Title-->
+        	{{input type = "text" id = "new-question" placeholder = "Ask question" value = newQuestion action = "createQuestion"}}
+      	</header><!--Close Header-->
+
+      	<section id = "main"><!--Main Content-->
+        	<ul id = "question-list"><strong>Questions</strong><!--Questions title - declared list-->
+          		{{#each}}<li class = "question"><!--Loops through questions to display them-->
+            		<p>{{question}}</p><!--Question displayed-->
+          		</li><hr />{{/each}} <!--End looped content-->
+        	</ul>
+      	</section><!--Close Main Content-->
+    </section><!--Close Ask App Container-->
+</div>
+</script>
+	<!--Frameworks-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script><!--Jquery-->
+  	<script src="bower_components/handlebars/handlebars.js"></script><!--Handlebars-->
+  	<script src="bower_components/ember/ember.js"></script><!--ember.js-->
+  	<script src="bower_components/ember-data/ember-data.js"></script><!--ember data-->
+    
+	<script src="js/application.js"></script><!--Application file to link to API-->
+	<script src="js/router.js"></script><!--Router-->
+    <script src="js/models/models.js"></script><!--Models-->
+    <!--Controllers-->
+    <!--
+    Login and create account controller removed
+    //-->
+    <script src="js/controllers/lectures_controller.js"></script>
+    <script src="js/controllers/questions_controller.js"></script>
+    <!--<script src="js/controllers/login_controller.js"></script>
+    <script src="js/controllers/account_controller.js"></script>-->
+</body>
+</html>

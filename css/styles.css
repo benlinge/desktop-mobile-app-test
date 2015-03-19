@@ -1,0 +1,124 @@
+/*Font Face declared for all text*/
+@font-face {
+	font-family:main-font;/*font named as main font*/
+	src: url(../fonts/Raleway-Light.ttf);/*source*/
+}
+/*Basic Application Styles*/
+body {
+	margin:auto;/*For application to be shown in centre*/
+	width:500px;/*App Width*/
+	font-family:main-font;/*font face called and set to all font*/
+}
+#wrapper {
+	background-color:#FFFAD9;/*background color of application*/
+	padding:20px;/*Apropriate padding*/
+	box-shadow: 2px 2px 10px #333; /*shadow "width" "height" "opacity" and then "colour"*/
+}
+/*Lecture list*/
+#lecture-list li {
+	list-style:none;/*no bullet points*/
+}
+#lecture-list li a {
+	text-decoration:none;/*no underline*/
+	color:#333;/*call grey*/
+}
+#lecture-list li a:hover {
+	font-weight:700;/*appropriate font weight to show interactivity*/
+}
+/*Question list*/
+#question-list li {
+	list-style:none;/*no bullet points*/
+}
+/*Horizontal Rule specific styles*/
+hr {/*styles set to increase thickness, width and position*/
+	border:0;
+	background-color:#CCC;
+	height:1px;
+	width:400px;
+	margin-left:-20px;
+}
+/*New question input box*/
+#new-question {
+	width:450px;/*increase width to show question more appropriately*/
+}
+/*navigation*/
+.back {
+	color:#FFF;
+	background-color:#FF040B;
+	/*border styles*/
+	border-radius:5px;/*rounded corners*/
+	border-right:medium solid #FF040B;/*Border colours normal*/
+	border-top:medium solid #FF040B;
+	border-bottom:medium solid #8C0003;
+	border-left:medium solid #8C0003;
+}
+.back:hover {
+	background-color:#CB0110;
+	/*border styles*/
+	border-right:medium solid #8C0003;/*Border colours on hover*/
+	border-top:medium solid #8C0003;
+	border-bottom:medium solid #FF040B;
+	border-left:medium solid #FF040B;
+}
+.forward {
+	color:#FFF;
+	position:absolute;
+	margin-left:380px;
+	background-color:#FF040B;
+	/*border styles*/
+	border-radius:5px;/*rounded corners*/
+	border-right:medium solid #FF040B;/*Border colours normal*/
+	border-top:medium solid #FF040B;
+	border-bottom:medium solid #8C0003;
+	border-left:medium solid #8C0003;
+}
+.forward:hover {
+	background-color:#CB0110;
+	/*border styles*/
+	border-right:medium solid #8C0003;/*Border colours on hover*/
+	border-top:medium solid #8C0003;
+	border-bottom:medium solid #FF040B;
+	border-left:medium solid #FF040B;
+}
+/*remove button*/
+.destroy {
+	color:#FFF;
+	margin-left:300px;
+	background-color:#FF040B;
+	/*border styles*/
+	border-radius:5px;/*rounded corners*/
+	border-right:medium solid #FF040B;/*Border colours normal*/
+	border-top:medium solid #FF040B;
+	border-bottom:medium solid #8C0003;
+	border-left:medium solid #8C0003;
+}
+.destroy:hover {
+	background-color:#CB0110;
+	/*border styles*/
+	border-right:medium solid #8C0003;/*Border colours on hover*/
+	border-top:medium solid #8C0003;
+	border-bottom:medium solid #FF040B;
+	border-left:medium solid #FF040B;
+}
+/*login button*/
+.login {
+	color:#FFF;
+	font-size:18px;
+	width:100px;
+	height:50px;
+	background-color:#FF040B;
+	/*border styles*/
+	border-radius:5px;/*rounded corners*/
+	border-right:medium solid #FF040B;/*Border colours normal*/
+	border-top:medium solid #FF040B;
+	border-bottom:medium solid #8C0003;
+	border-left:medium solid #8C0003;
+}
+.login:hover {
+	background-color:#CB0110;
+	/*border styles*/
+	border-right:medium solid #8C0003;/*Border colours on hover*/
+	border-top:medium solid #8C0003;
+	border-bottom:medium solid #FF040B;
+	border-left:medium solid #FF040B;
+}
